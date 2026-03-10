@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* Morandi Palette Refined */
+    /* Background: #F7F5F0 (Warm Off-white) */
+    --background: 45 20% 96%;
+    /* Foreground: #44403C (Soft Stone) */
+    --foreground: 30 4% 25%;
+    /* Primary: #B5C7D3 (Light Blue) */
+    --primary: 204 23% 74%;
+    --primary-foreground: 204 20% 20%;
+    /* Accent: #E2D1A7 (Pale Gold) */
+    --accent: 43 44% 77%;
+    --accent-foreground: 43 40% 20%;
+    --muted: 45 10% 90%;
+    --muted-foreground: 30 5% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 4% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 4% 25%;
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 204 23% 74%;
+    --radius: 1.25rem;
+  }
+  * {
+    @apply border-border;
+  }
+  html, body {
+    height: 100%;
+    @apply bg-background text-stone-800 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  #root {
+    height: 100%;
+  }
+}
+@layer utilities {
+  @keyframes healing-pulse {
+    0%, 100% { background-color: hsl(45, 20%, 96%); }
+    50% { background-color: hsl(45, 20%, 97.5%); }
+  }
+  .animate-healing-pulse {
+    animation: healing-pulse 8s ease-in-out infinite;
+  }
+}
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)];
+  }
+}
